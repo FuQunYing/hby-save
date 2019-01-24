@@ -1,0 +1,36 @@
+<div class="footer-fixed">
+  <div [ngClass]="{'footer-cart-show':fold == false}" *ngIf="totalCount()>0" class="footer-cart">
+    <div class="cart-header">
+      <div class="title">
+        <span>购物车</span>
+      </div>
+      <span class="dele" (click)="empty()"><i class="anticon anticon-delete"></i>清空</span>
+    </div>
+    <div class="cart-list">
+      <ul>
+        <div *ngFor="let goodArr of this._cardService.goodsList">
+          <li class="food" *ngIf="returnCount(goodArr)>0">
+            <span class="name">{{goodArr[0].goods_name}}</span>
+            <div class="price">
+              <span>{{CaPrice(goodArr) | currency:'￥'}}</span>
+            </div>
+            <app-cart-control [good]='goodArr'></app-cart-control>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-sum">
+    <div role="button" class="sum" [ngClass]="{'has':totalCount() > 0}" (click)="toggleCart()">
+      <div class="total">{{totalCount()}}</div>
+    </div>
+    <div class="detail" (click)="toggleCart()">
+      <p class="n2pay">{{totalPrice() | currency:'￥'}}</p>
+      <p class="card-no">{{totalCount()}} 件商品</p>
+    </div>
+    <a class="toPay" [ngClass]="{'on':totalCount() > 0}" (click)="toPay()">
+      {{totalCount() > 0? '去支付' : '请选购'}}
+    </a>
+  </div>
+  <div class="footer-mask" *ngIf="!fold && totalCount()>0" (click)="hideCart()"></div>
+</div>

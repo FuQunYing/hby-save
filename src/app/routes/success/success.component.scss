@@ -1,0 +1,33 @@
+.wrapper {
+  margin: .466667rem;
+  text-align: center;
+  color: #4CAF50;
+  i {
+    font-size: 1.06667rem;
+  }
+  .title {
+    font-size: .466667rem
+  }
+}
+
+.detail {
+  text-align: left;
+  flex: 0 0 100%;
+  margin: .533334rem .4rem;
+  padding: .266667rem .4rem;
+  border-radius: .106667rem;
+  font-size: .293333rem;
+  color: #868e96;
+  background: #ffffff;
+}
+
+.bottom {
+  position: absolute;
+  bottom: .4666rem *2;
+  width: 100%;
+  padding: 0 .4rem;
+  overflow: hidden;
+  button {
+    width: 100%;
+  }
+}

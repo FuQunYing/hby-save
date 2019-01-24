@@ -1,0 +1,45 @@
+<div class="goods-wrapper">
+  <main class="goods">
+    <div class="scoller">
+      <div class="goods-list" *ngIf="_cardService.goodsList.length > 0">
+        <div class="quickly">
+          <!--<input class="cui-form" placeholder="请输入货道号">-->
+          <!--<button nz-button nzType="'primary'">输入货道号</button>-->
+          <span>请选购商品</span>
+        </div>
+        <dl>
+          <div *ngFor="let goodArr of _cardService.goodsList">
+            <dt>
+              <div class="good" (click)="selectGood(goodArr)">
+                <div class="img">
+                  <img src="{{goodArr[0].img}}"/>
+                </div>
+                <!--<div class="spec">-->
+                <!--<span>-->
+                <!--{{goodArr[0].spec}}-->
+                <!--</span>-->
+                <!--</div>-->
+                <div class="detail">
+              <span class="title">
+                {{goodArr[0].goods_name}}
+              </span>
+                  <!--<span class="desc">-->
+                  <!--剩余: {{returnSum(goodArr)}}-->
+                  <!--</span>-->
+                  <span class="price">
+                {{(goodArr[0].price)/100 | currency:'￥'}}
+              </span>
+                  <app-cart-control [good]='goodArr'></app-cart-control>
+                </div>
+              </div>
+            </dt>
+          </div>
+        </dl>
+      </div>
+      <div class="nogood" *ngIf="_cardService.goodsList.length===0">
+        暂无可购商品
+      </div>
+    </div>
+  </main>
+</div>
+<app-shopping-cart></app-shopping-cart>

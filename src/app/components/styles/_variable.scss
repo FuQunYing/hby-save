@@ -1,0 +1,45 @@
+
+// coinect UI base color
+
+$blue:    #2196F3 !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #F44336 !default;
+$orange:  #FF9800 !default;
+$yellow:  #FFEB3B !default;
+$green:   #4CAF50 !default;
+$teal:    #20c997 !default;
+$cyan:    #2db7f5 !default;
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$light    :     $gray-200;
+$gray     :     $gray-500;
+$dark     :     $gray-900;
+
+  // font-size
+
+$title      :       .466667rem;
+$subtitle   :       .373333rem;
+$desc       :       .293333rem;
+$label      :       .293333rem/2;
+
+// margin
+
+$m-lr       :       .16667rem;
+$m-lr2       :       .16667rem*2;
+
+// radius
+
+$border-radius : .053333rem;

@@ -1,0 +1,33 @@
+@import "../../components/styles/cui";
+
+.cartcontrol-wrapper{
+  flex: 3;
+  text-align: right;
+  .cartcontrol{
+    display: inline-block;
+    font-size: .346667rem;
+    white-space: nowrap;
+    a{
+      display: inline-block;
+      padding: .093333rem;
+      vertical-align: middle;
+      text-decoration: none;
+      svg{
+        width: $title * 1.3;
+        height: $title * 1.3;
+        text-align: center;
+        border-radius: 50%;
+        fill: #2395ff;
+      }
+    }
+    .choosed{
+      display: inline-block;
+      text-align: center;
+      color: $dark;
+      vertical-align: middle;
+      font-size: .373333rem;
+      min-width: .4rem;
+      max-width: 2em;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<div class="app">
+  <div class="header-fixed">
+    <div class="bg-logo" *ngIf="_cardService.baseInfo.logo"
+         [style.background-image]="logoUrl(_cardService.baseInfo.logo)"></div>
+    <div class="shop">
+      <img class="img" src="{{_cardService.baseInfo.logo}}">
+      <div class="detail">
+        <div class="name">
+          {{_cardService.device.sn}}
+        </div>
+        <div class="server">
+          <a href='tel:{{_cardService.baseInfo.telephone}}'>服务热线 : {{_cardService.baseInfo.telephone}}</a>
+        </div>
+        <div class="status" *ngIf="_statusService.status_dot">
+        <span id="Mach_status" class="badge badge-light badge-pill">
+          {{_statusService.status}}
+          <span class="dotting" *ngIf="_statusService.status_dot"></span>
+        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="toptap">
+    <div class="item">
+      <span class="name">会员卡: <span class="cardno">{{_cardService.card.cardno}}</span></span>
+    </div>
+    <div class="item" (click)="showCardDetail(_cardService.card)">
+    <span class="name">卡余额：<span
+      class="money">￥{{((_cardService.card.namount/100 + _cardService.card.red_packet/100)).toFixed(2)}}</span></span>
+    </div>
+  </div>
+  <app-goods-list></app-goods-list>
+</div>

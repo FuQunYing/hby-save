@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <i class="anticon anticon-check-circle"></i>
+  <p class="title">{{status.step === 2 ? '购物完成': '支付成功'}}</p>
+  <div class="detail">
+    <nz-steps [nzCurrent]="status.step" nzDirection="vertical" nzStatus="process">
+      <nz-step nzTitle="支付状态"  [nzDescription]="'支付成功'"></nz-step>
+      <nz-step nzTitle="出货状态" [nzDescription]="nzDescription">
+        <ng-template #nzDescription>
+          <p>{{status.step===2?'出货完成':'正在出货，请耐心等候'}}</p>
+        </ng-template>
+      </nz-step>
+      <nz-step nzTitle="结果"  [nzDescription]="nzDes">
+        <ng-template #nzDes>
+          <p>{{status.step===2?'请取货':''}}</p>
+        </ng-template>
+      </nz-step>
+    </nz-steps>
+  </div>
+</div>
+<div class="bottom">
+  <button nz-button
+          nzType="primary"
+          [nzSize]="'large'"
+          (click)="backHome()"
+          [nzLoading]="status.step !== 2">
+    {{status.step===2?'返回主页':'出货中'}}
+  </button>
+</div>

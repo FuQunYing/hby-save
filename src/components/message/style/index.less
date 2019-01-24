@@ -1,0 +1,80 @@
+@import "../../style/themes/default";
+
+@message-prefix-cls: ~"@{ant-prefix}-message";
+
+.@{message-prefix-cls} {
+  font-size: @font-size-base;
+  position: fixed;
+  z-index: @zindex-message;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  pointer-events: none;
+
+  &-notice {
+    padding: 8px;
+    text-align: center;
+    &:first-child {
+      margin-top: -8px;
+    }
+  }
+
+  &-notice-content {
+    padding: .666667rem;
+    border-radius: @border-radius-base;
+    box-shadow: @shadow-2;
+    color: #fff;
+    background: rgba(17, 17, 17, 0.7);
+    //background: @component-background;
+    display: inline-block;
+    pointer-events: all;
+    p{
+      margin: 0;
+    }
+  }
+
+  &-success .@{iconfont-css-prefix} {
+    color: @success-color;
+  }
+
+  &-error .@{iconfont-css-prefix} {
+    color: @error-color;
+  }
+
+  &-warning .@{iconfont-css-prefix} {
+    color: @warning-color;
+  }
+
+  &-info .@{iconfont-css-prefix},
+  &-loading .@{iconfont-css-prefix} {
+    color: @info-color;
+  }
+
+  .@{iconfont-css-prefix} {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    font-size: .8rem;
+    margin-bottom: @font-size-base;
+  }
+
+  //&-notice.move-up-leave.move-up-leave-active {
+  //  animation-name: MessageMoveOut;
+  //  overflow: hidden;
+  //  animation-duration: .3s;
+  //}
+}
+
+//@keyframes MessageMoveOut {
+//  0% {
+//    opacity: 1;
+//    max-height: 150px;
+//    padding: 8px;
+//  }
+//  100% {
+//    opacity: 0;
+//    max-height: 0;
+//    padding: 0;
+//  }
+//}

@@ -1,0 +1,157 @@
+@import "../../components/styles/cui";
+
+.app{
+  height: 100%;
+  overflow: hidden;
+}
+.header-fixed {
+  position: relative;
+  color: #fff;
+  background: rgba(7, 17, 27, 0.5);
+  .bg-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    -webkit-filter: blur(15px);
+    filter: blur(15px);
+  }
+  .shop {
+    padding: $desc 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .img {
+      width: 1.733333rem;
+      height: 1.733333rem;
+      border: 1px solid #fff;
+      border-radius: $border-radius;
+      background: #ffffff;
+      overflow: hidden;
+      img {
+        max-width: 100%;
+      }
+    }
+    .detail {
+      margin-top: $desc;
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center;
+      .name{
+        font-weight: bold;
+        font-size: $desc;
+      }
+      .sn{
+        font-size: $label;
+        color: $light;
+      }
+      .name, .sn {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .sn, .server {
+        font-size: $desc;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      .server {
+        height: .533333rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        a {
+          color: #fff;
+        }
+      }
+      .status{
+        position: absolute;
+        top: .826666rem;
+        right: .4rem;
+      }
+    }
+  }
+}
+.dotting {
+  display: inline-block;
+  min-width: 2px;
+  min-height: 2px;
+  box-shadow: 2px 0 currentColor, 6px 0 currentColor, 10px 0 currentColor;
+  animation: dot 2s infinite step-start both;
+}
+
+.dotting:before {
+  content: '...';
+}
+
+.dotting::before {
+  content: '';
+}
+
+.dotting {
+  margin-right: 8px;
+}
+
+@keyframes dot {
+  25% {
+    box-shadow: none;
+  }
+  /* 0个点 */
+  50% {
+    box-shadow: 2px 0 currentColor;
+  }
+  /* 1个点 */
+  75% {
+    box-shadow: 2px 0 currentColor, 6px 0 currentColor; /* 2个点 */
+  }
+}
+.toptap {
+  line-height: 1.066667rem;
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 0.026667rem 0.053333rem 0 rgba(0, 0, 0, .06);
+  margin-bottom: -1px;
+  .item {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    color: $gray;
+    border-bottom: 1px solid $light;
+    font-size: $desc;
+    .name {
+      position: relative;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      text-align: center;
+      font-size: $subtitle;
+      color: $gray;
+    }
+    .cardno {
+      font-size: $desc;
+    }
+    .money {
+      color: $orange;
+      font-size: $desc;
+      font-weight: bold;
+    }
+    .on {
+      color: $blue;
+      font-weight: 700;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -.266667rem;
+        left: 0;
+        right: 0;
+        height: .08rem;
+        background-color: $blue;
+      }
+    }
+  }
+}

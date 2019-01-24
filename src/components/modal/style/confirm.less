@@ -1,0 +1,72 @@
+@import "../../style/mixins/index";
+
+@confirm-prefix-cls: ~"@{ant-prefix}-confirm";
+
+.@{confirm-prefix-cls} {
+  .@{ant-prefix}-modal-header {
+    display: none;
+  }
+
+  .@{ant-prefix}-modal-close {
+    display: none;
+  }
+
+  .@{ant-prefix}-modal-body {
+    padding: .46666rem;
+  }
+
+  &-body-wrapper {
+    .clearfix();
+  }
+
+  &-body {
+    text-align: center;
+    .@{confirm-prefix-cls}-title {
+      color: @success-color;
+      font-size: .46666rem;
+    }
+
+    .@{confirm-prefix-cls}-content {
+      margin-top: @font-size-base;
+      font-size: @font-size-base;
+      color: @text-color;
+    }
+
+    > .@{iconfont-css-prefix} {
+      font-size: 24px;
+      margin-right: 16px;
+      padding: 0 1px;
+      float: left;
+    }
+  }
+
+  .@{confirm-prefix-cls}-btns {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+
+    button{
+      width: 100%;
+    }
+    button + button {
+      margin-left: 10px;
+    }
+  }
+
+  &-error &-body > .@{iconfont-css-prefix} {
+    color: @error-color;
+  }
+
+  &-warning &-body > .@{iconfont-css-prefix},
+  &-confirm &-body > .@{iconfont-css-prefix} {
+    color: @warning-color;
+  }
+
+  &-info &-body > .@{iconfont-css-prefix} {
+    color: @info-color;
+  }
+
+  &-success &-body > .@{iconfont-css-prefix} {
+    color: @success-color;
+  }
+}
